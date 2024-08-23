@@ -21,12 +21,12 @@ spec:
             - containerPort: 3000
           env:
             - name: USER_NAME
-              valueFom:
+              valueFrom:
                 secretKeyRef:
                   name: mongo-secret
                   key: mongo-user
             - name: USER_PWD
-              valueFom:
+              valueFrom:
                 secretKeyRef:
                   name: mongo-secret
                   key: mongo-password
@@ -47,5 +47,5 @@ spec:
     - protocol: TCP
       port: 3000
       targetPort: 3000
-      NodePort: 30100
+      nodePort: 30100
   type: NodePort
